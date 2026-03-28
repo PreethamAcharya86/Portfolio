@@ -343,12 +343,10 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, observerOptions);
 
-// Observe all fade-in elements
 document.querySelectorAll('.fade-in').forEach(el => {
   observer.observe(el);
 });
 
-// Smooth scroll for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
