@@ -7,6 +7,74 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Mobile navbar responsiveness only — no other styles changed -->
+  <style>
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: currentColor;
+      border-radius: 2px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 12px 0;
+        border-top: 1px solid rgba(128,128,128,0.15);
+        background: inherit;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        z-index: 999;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links li {
+        list-style: none;
+      }
+
+      .nav-links li a {
+        display: block;
+        padding: 10px 24px;
+        font-size: 0.95rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -14,7 +82,12 @@
 <nav id="navbar">
   <div class="nav-container">
     <a href="#" class="logo">PA.</a>
-    <ul class="nav-links">
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -58,7 +131,7 @@
   <div class="about-content">
     <div class="about-text">
       <p>
-        I'm a passionate Full Stack Developer and AI Enthusiast based in Udupi, Karnataka. 
+        I'm a passionate Full Stack Developer and AI Enthusiast. 
         I love creating innovative web applications that solve real-world problems and 
         provide exceptional user experiences.
       </p>
@@ -66,10 +139,6 @@
         My journey in technology has been driven by curiosity and a constant desire to learn. 
         I specialize in building full-stack applications using the MERN stack and integrating 
         AI capabilities to create intelligent, modern solutions.
-      </p>
-      <p>
-        When I'm not coding, I enjoy exploring new technologies, contributing to open-source 
-        projects, and staying updated with the latest trends in web development and artificial intelligence.
       </p>
     </div>
     <div class="about-stats">
@@ -80,14 +149,6 @@
       <div class="stat-card fade-in">
         <div class="stat-number">8+</div>
         <div class="stat-label">Technologies</div>
-      </div>
-      <div class="stat-card fade-in">
-        <div class="stat-number">100%</div>
-        <div class="stat-label">Commitment</div>
-      </div>
-      <div class="stat-card fade-in">
-        <div class="stat-number">∞</div>
-        <div class="stat-label">Learning</div>
       </div>
     </div>
   </div>
@@ -106,11 +167,21 @@
         <h3 class="project-title">ConnectEach</h3>
       </div>
       <div class="project-body">
-        <p class="project-description">
-          A web-based platform for presenting professional details and building ***s — 
-          a purposefully crafted alternative to LinkedIn. Features include user profiles, 
-          networking capabilities, and professional showcase tools.
+        <p class="project-description"> 
+          ConnectEach is a professional networking platform designed to help individuals build a strong digital presence and showcase their skills, experience, and projects.
         </p>
+        <p class="project-description">
+          It enables users to create structured profile pages that highlight their professional journey and technical capabilities
+        </p>
+        <p class="project-description">
+          Users can form and manage teams to work together on projects efficiently.
+        </p>
+        <p class="project-description">
+          <a href="https://connect-each.onrender.com" class="project-link">
+            Check out the here
+          </a>
+        </p>
+        
         <div class="project-tags">
           <span class="tag">MongoDB</span>
           <span class="tag">Express</span>
@@ -127,9 +198,18 @@
       </div>
       <div class="project-body">
         <p class="project-description">
-          A chat-based AI assistant built on a full-stack MERN architecture, powered by an 
-          external AI API for intelligent conversations. Provides natural language processing 
-          and contextual responses for enhanced user interaction.
+          Info Agent is a full-stack MERN application designed to deliver intelligent, real-time AI-driven conversations.
+        </p>
+        <p class="project-description">
+          It integrates the Groq API to provide fast and dynamic responses across multiple AI models.Users can customize AI behavior and switch between models to tailor interaction styles.
+        </p>
+        <p class="project-description">
+          This project demonstrates practical implementation of AI integration and seamless frontend-backend communication.
+        </p>
+        <p class="project-description">
+          <a href="https://info-agent-50h6.onrender.com" class="project-link">
+            Check out the here
+          </a>
         </p>
         <div class="project-tags">
           <span class="tag">API Integration</span>
@@ -297,6 +377,25 @@ window.addEventListener('scroll', () => {
   }
 });
 
+// Hamburger toggle
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+
+hamburger.addEventListener('click', () => {
+  const isOpen = navLinks.classList.toggle('open');
+  hamburger.classList.toggle('open', isOpen);
+  hamburger.setAttribute('aria-expanded', isOpen);
+});
+
+// Close menu when a nav link is clicked
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', false);
+  });
+});
+
 // Intersection Observer for fade-in animations
 const observerOptions = {
   threshold: 0.1,
@@ -331,3 +430,5 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 </script>
+</body>
+</html>

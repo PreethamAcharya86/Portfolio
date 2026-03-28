@@ -382,7 +382,7 @@ nav.scrolled {
 
 .project-description {
   color: var(--dark-gray);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
   line-height: 1.8;
 }
 
@@ -467,6 +467,9 @@ nav.scrolled {
   color: var(--primary-blue);
   font-weight: 700;
   font-size: 1.2rem;
+}
+.project-link {
+  color: #1e40af;
 }
 
 .skill-name {
