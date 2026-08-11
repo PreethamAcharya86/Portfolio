@@ -1,0 +1,9 @@
+You are a professional frontend developer 
+Make my protfolio modern and aesthetic like professional by adding stunning visuals and component arrengement 
+Check out the images folder where i have  the images of different projects i have and also named with the project name
+In project section just keep the image like a button to the project description when i clik images of project then with some animation show the project decscription which i have in my old index.html folder and also i names image with project totle so that it can be usefull you to navigate 
+Also make the portfolio responsive in small screen also 
+Mka ethe project light weight do not add any other heavy libraries just use css property with html and js to make the web stunning and modern
+
+
+create seperate js file for adding scrpts if any of the  js in html move that to js if rquired or delete
