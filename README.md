@@ -3,7 +3,7 @@
 Welcome to my personal portfolio repository! I'm a passionate **Full Stack Developer and AI Enthusiast** focused on building intelligent web applications that solve real-world problems.
 
 ## 🚀 Live Demo
-*(You can host your `src/index.html` file using GitHub Pages, Vercel, or Netlify and place the link here)*
+- **Link**: [Portfolio](https://portfolio-kohl-delta-32.vercel.app/)
 
 ## 🎨 Design & Architecture
 This portfolio is built with a focus on modern web aesthetics and performance. 
@@ -51,6 +51,3 @@ Here are some of the key projects showcased in this portfolio:
 - **Email**: [preethamacharya16@gmail.com](mailto:preethamacharya16@gmail.com)
 - **GitHub**: [@PreethamAcharya86](https://github.com/PreethamAcharya86)
 - **LinkedIn**: [preetham-acharya](https://www.linkedin.com/in/preetham-acharya)
-
----
-*© 2026 Preetham Acharya. All rights reserved.*
