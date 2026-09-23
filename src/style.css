@@ -378,6 +378,12 @@ nav.scrolled {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+}
+.avatar-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .avatar-inner span {
   font-family: var(--font-head);
