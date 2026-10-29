@@ -3,7 +3,7 @@
 Welcome to my personal portfolio repository! I'm a passionate **Full Stack Developer and AI Enthusiast** focused on building intelligent web applications that solve real-world problems.
 
 ## Live Demo
-- **Link**: [Portfolio](https://portfolio-kohl-delta-32.vercel.app/)
+- **Link**: [Portfolio](https://portfolio-src-tau.vercel.app)
 
 ## Design & Architecture
 This portfolio is built with a focus on modern web aesthetics and performance. 
